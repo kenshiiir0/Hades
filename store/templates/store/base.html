@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Clothing Store{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+<body>
+    <!-- 🌐 NAVBAR -->
+   <div class="navbar">
+    <div class="nav-container">
+        <a href="{% url 'home' %}" class="nav-logo">Hades</a>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'product_list' %}">Products</a></li>
+        </ul>
+    </div>
+</div>
+
+    <!-- 📦 PAGE CONTENT -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="{% static 'store/script.js' %}"></script>
+</body>
+</html>
